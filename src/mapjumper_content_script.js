@@ -27,6 +27,8 @@ var findCoordinates= function() {
         hostname = 'wikimapia';
     if (hostname.match(/www.bing.com/))
         hostname = 'bing';
+    if (hostname.match(/mapy.cz/))
+        hostname = 'mapycz';
     switch(hostname){
         case "foursquare":
             console.log("foursquare");
@@ -92,6 +94,20 @@ var findCoordinates= function() {
                 lat = parseFloat(latlonz[1]);
                 lon = parseFloat(latlonz[2]);
                 zoom = parseFloat(latlonz[3]);
+            }
+            break;
+        case "mapycz":
+            console.log("mapycz");
+            var search = window.location.search;
+            if (search){
+                console.log(search);
+                var lonMatch = search.match(/x=([\d.-]+)/);
+                var latMatch = search.match(/y=([\d.-]+)/);
+                var zoomMatch = search.match(/z=([\d]+)/);
+                if (!(latMatch && lonMatch && zoomMatch)) break;
+                lat = parseFloat(latMatch[1]);
+                lon = parseFloat(lonMatch[1]);
+                zoom = parseFloat(zoomMatch[1]);
             }
             break;
     }
