@@ -1,7 +1,7 @@
 {
     "name": "MapJumper Plus",
-    "version": "0.6.0",
-    "description": "Jump to same location on a different map service (eg. Google maps to OpenStreetMap and back). Works for may map providers!",
+    "version": "0.6.1",
+    "description": "Jump to same location on a different map service (eg. from Google maps to OpenStreetMap and back). Works with many map services!",
     "icons": {
         "512": "material512.png",
         "128": "material128.png",
