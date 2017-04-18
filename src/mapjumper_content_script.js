@@ -21,16 +21,16 @@ var findCoordinates = function() {
         return { error: 'Could not find provider for url ' + window.location.hostname + ', please file an issue at https://github.com/dudarev/mapjumper/issues' };
     }
 
-    console.log('matching map providers', matchingMapProviders);
+    // console.log('matching map providers', matchingMapProviders);
 
     var mapProvider = matchingMapProviders[0];
     var latLonZoom = mapProvider.extract && mapProvider.extract(document) || null;
 
-    console.log('latLonZoom', latLonZoom);
+    // console.log('latLonZoom', latLonZoom);
 
     if (latLonZoom.lat === null || latLonZoom.lon === null) {
         var message = mapProvider.coordinatesNotFound || 'No place detected.';
-        console.log('Mapjumper: map provider ' + mapProvider.name + ': no coordinates found:', message);
+        // console.log('Mapjumper: map provider ' + mapProvider.name + ': no coordinates found:', message);
         return { error: message };
     }
 
